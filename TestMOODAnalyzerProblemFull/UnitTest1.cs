@@ -57,7 +57,38 @@ namespace TestMOODAnalyzerProblemFull
             //Assert
             Assert.AreEqual(expected, actual);
             Console.WriteLine(actual);
+        }
+        //UC-2
+        [TestMethod]
+        public void NULL()
+        {
+            //Arrange
+            string msg =null;
+            string expected = "Invalid Mood";
+            //Act
+            AnalyzeMood analyzeMood = new AnalyzeMood(msg);
+            var actual = analyzeMood.Mood();
 
+            //Assert
+            Assert.AreEqual(expected, actual);
+            Console.WriteLine(actual);
+        }
+        //UC-2
+        //same above but using data row null
+        [TestMethod]
+        [DataRow(null)]
+        public void NULL1(string message)
+        {
+            //Arrange
+            //string msg = null;
+            string expected = "Invalid Mood";
+            //Act
+            AnalyzeMood analyzeMood = new AnalyzeMood(message);
+            var actual = analyzeMood.Mood();
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+            Console.WriteLine(actual);
         }
 
     }
