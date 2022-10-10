@@ -13,9 +13,8 @@ namespace TestingMoodAnalyzer
         public AnalyzeMood(string message)
         {
             this.message = message;
-            
-        }
 
+        }
         public string Mood()
         {
             try
@@ -26,7 +25,7 @@ namespace TestingMoodAnalyzer
                 else
                     return "sad";
             }
-            catch
+            catch 
             {
                 return "Invalid Mood";
             }
@@ -47,18 +46,23 @@ namespace TestingMoodAnalyzer
             else
                 return "happy";
         }
+        public string Mood3()
+        {
+            try
+            {
+                message = message.ToLower();
+                if (message.Contains("happy"))
+                    return "happy";
+                else
+                    return "sad";
+            }
+            catch
+            {
+                return "Happy";
+            }
+        }
 
-        //public string NULLEXception()
-        //{
-        //    try 
-        //    {
-        //    message=message.ToLower();
-        //        if(message.Contains(" "))
-        //            return 
-            
-        //    }
-        
-        //}
+
 
     }
 }

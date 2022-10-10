@@ -90,6 +90,23 @@ namespace TestMOODAnalyzerProblemFull
             Assert.AreEqual(expected, actual);
             Console.WriteLine(actual);
         }
+        //UC-2.1
+        //using data row null
+        [TestMethod]
+        [DataRow(null)]
+        public void NULLShouldReturnHappy(string message)
+        {
+            //Arrange
+            //string msg = null;
+            string expected = "Happy";
+            //Act
+            AnalyzeMood analyzeMood = new AnalyzeMood(message);
+            var actual = analyzeMood.Mood3();
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+            Console.WriteLine(actual);
+        }
 
     }
 }
